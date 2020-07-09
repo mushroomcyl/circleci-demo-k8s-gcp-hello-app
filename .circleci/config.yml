@@ -69,6 +69,7 @@ jobs:
       - run:
           name: Deploy
           command: |
+            pwd
             chmod +x deployment.sh
             sh ./deployment.sh
             echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > gcloud-service-key.json
