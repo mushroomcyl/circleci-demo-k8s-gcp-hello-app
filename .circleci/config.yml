@@ -69,8 +69,7 @@ jobs:
       - run:
           name: Deploy
           command: |
-            # chmod +x .circleci/deployment.sh
-            sh .circleci/deployment.sh
+            sh kubernetes/deploy.sh
             echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > gcloud-service-key.json
             set -x
             gcloud auth activate-service-account --key-file gcloud-service-key.json
