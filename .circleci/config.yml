@@ -71,6 +71,8 @@ jobs:
           command: |
             pwd
             ls -a
+            cd ./circleci
+            ls
             chmod +x ./circleci/deployment.sh
             sh ./circleci/deployment.sh
             echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > gcloud-service-key.json
