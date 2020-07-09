@@ -70,9 +70,9 @@ jobs:
           name: Deploy
           command: |
             pwd
-            ls
+            ls -a
             # chmod +x deployment.sh
-            # sh ./deployment.sh
+            sh ./circleci/deployment.sh
             echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > gcloud-service-key.json
             set -x
             gcloud auth activate-service-account --key-file gcloud-service-key.json
