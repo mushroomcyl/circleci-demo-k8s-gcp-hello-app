@@ -70,8 +70,9 @@ jobs:
           name: Deploy
           command: |
             pwd
-            chmod +x deployment.sh
-            sh ./deployment.sh
+            ls
+            # chmod +x deployment.sh
+            # sh ./deployment.sh
             echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > gcloud-service-key.json
             set -x
             gcloud auth activate-service-account --key-file gcloud-service-key.json
