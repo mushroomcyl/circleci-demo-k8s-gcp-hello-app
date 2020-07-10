@@ -71,6 +71,7 @@ jobs:
           name: Deploy
           command: |
             # sh kubernetes/deploy.sh
+            ls
             echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > gcloud-service-key.json
             set -x
             gcloud auth activate-service-account --key-file gcloud-service-key.json
