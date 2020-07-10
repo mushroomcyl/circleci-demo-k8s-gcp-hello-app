@@ -1,0 +1,3 @@
+[submodule "helloapp-deployment"]
+	path = helloapp-deployment
+	url = https://github.com/mushroomcyl/helloapp-deployment.git
