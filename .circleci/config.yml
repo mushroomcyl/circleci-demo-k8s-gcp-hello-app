@@ -1,7 +1,8 @@
 version: 2
 defaults: &defaults
   docker:
-    - image: google/cloud-sdk@sha256:126a49cfa2aa6e20d561fa14999bf657bc341efeba04939bd2f612bf843d12a6
+    - image: google/cloud-sdk:latest
+    # - image: google/cloud-sdk@sha256:126a49cfa2aa6e20d561fa14999bf657bc341efeba04939bd2f612bf843d12a6
 jobs:
   build:
     <<: *defaults
@@ -69,7 +70,7 @@ jobs:
       - run:
           name: Deploy
           command: |
-            sh kubernetes/deploy.sh
+            # sh kubernetes/deploy.sh
             echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > gcloud-service-key.json
             set -x
             gcloud auth activate-service-account --key-file gcloud-service-key.json
